@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="popup.css">
+		<script src="popup.js"></script>
+		<script src="crypto.js"></script>
+	</head>
+	<body>
+		<div class="popup-container">
+			<h3><a href="https://redakt.org/" target="_blank" title="visit redakt.org">Redakt</a> <span id="version">v1.2.2</span></h3>
+			<img id="syncIcon" src="./assets/sync.png" title="Force decryption"/>
+		    <div class="textarea-wrapper">
+    			<textarea id="inputText" placeholder="Enter text to encrypt or decrypt"></textarea>
+    			<button id="pasteButton" title="Paste text">Paste</button>
+			</div>
+		    <div>
+		      <button id="buttonDecrypt" title="Decrypt text">Decrypt</button>
+		      <button id="buttonEncrypt" title="Encrypt text">Encrypt</button>
+		    </div>
+		    <p id="outputText" title="Click to copy!"></p>
+		    <div><p class="copied" id="copied"><i>Text copied</i></p></div>
+		  </div>
+		</div>
+	</body>
+</html>

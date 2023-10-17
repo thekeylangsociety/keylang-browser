@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Redakt",
+  "version": "1.2.2",
+  "permissions": ["activeTab", "scripting"],
+  "description": "Encrypt and protect your content against bots, scrappers, algorithms and AI.",
+  "action": {
+    "default_icon": {
+      "16": "assets/redakt16.png",
+      "48": "assets/redakt48.png",
+      "128": "assets/redakt128.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "assets/redakt16.png",
+    "48": "assets/redakt48.png",
+    "128": "assets/redakt128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["script.js", "crypto.js"]
+    }
+  ]
+}
