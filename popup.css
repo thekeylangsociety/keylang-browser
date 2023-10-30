@@ -32,6 +32,14 @@ h3 > a:hover {
 #version {
   font-size: 0.7em;
   color: #A6A8AA;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+#version:hover {
+  text-decoration: underline;
 }
 
 .textarea-wrapper {
@@ -104,10 +112,31 @@ button:hover {
   opacity: 0.6;
 }
 
+#try {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  background-color: #FF9000;
+  padding: 5px 25px 5px 25px;
+  border-radius: 15px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+#try:hover {
+  opacity: 0.8;
+}
+
+footer {
+  margin-top: 50px;
+}
+
 /* Hidden (Coming soon) */
 
-#pasteButton {
-  display: none;
+/*#pasteButton {
   position: absolute;
   top: 5px;
   right: 0px;
@@ -117,4 +146,4 @@ button:hover {
   background-color: lightgrey;
   color: grey;
   border: none;
-}
+}*/
