@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function manualDecrypt() {
-  const inputText = document.getElementById('inputText').value.replace('redakt.org-','').replace('redakt-','').replace('&&&','');
+  const inputText = document.getElementById('inputText').value.replace('redakt.org-','').replace('redakt-','').replace('&&&','').replace('r3d4kt-','').replace('r8%h7t-','');
   const decryptedText = CryptoJS.AES.decrypt(inputText, key).toString(CryptoJS.enc.Utf8);
   document.getElementById('outputText').textContent = decryptedText;
   document.getElementById("copied").style.display = "none";
@@ -62,7 +62,7 @@ function forceSelect() {
     var text = element.textContent.trim();
 
     // Check if the text matches the desired pattern
-    if (text.startsWith("redakt-") || text.startsWith("redakt.org-")) {
+    if (text.startsWith("redakt-") || text.startsWith("redakt.org-") || text.startsWith("r3d4kt-") || text.startsWith("r8%h7t-")) {
       if (text.endsWith("&&&")) {
         // Send the text to the decrypt function
         var decryptedText = forceDecrypt(text);
@@ -82,7 +82,7 @@ function forceSelect() {
 
   function forceDecrypt(text) {
     // Clean text
-    const messageContent = text.replace('redakt.org-','').replace('redakt-','').replace('&&&','');
+    const messageContent = text.replace('redakt.org-','').replace('redakt-','').replace('&&&','').replace('r3d4kt-','').replace('r8%h7t-','');
     
     // Decrypt text
     const decrypted = CryptoJS.AES.decrypt(messageContent, key);
