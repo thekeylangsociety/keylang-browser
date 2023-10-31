@@ -16,6 +16,10 @@ body {
 	border-radius: 15px;
 }
 
+header {
+  margin-bottom: 50px;
+}
+
 h3 > a {
   font-family: "Agrandir Title";
 	color: white;
@@ -23,27 +27,36 @@ h3 > a {
   margin-right: 5px;
   text-decoration: none;
   letter-spacing: 1.5px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  cursor: pointer;
 }
 
 h3 > a:hover {
   text-decoration: underline;
 }
 
-#version {
-  font-size: 0.7em;
-  color: #A6A8AA;
+#try {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  background-color: #FF9000;
+  padding: 5px 25px 5px 25px;
+  border-radius: 15px;
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  top: 10px;
+  right: 10px;
   cursor: pointer;
 }
 
-#version:hover {
-  text-decoration: underline;
+#try:hover {
+  opacity: 0.8;
 }
 
 .textarea-wrapper {
-    position: relative;
+  position: relative;
 }
 
 textarea {
@@ -100,11 +113,11 @@ button:hover {
 }
 
 #syncIcon {
-	height: 15px;
-	width: auto;
+  height: 15px;
+  width: auto;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  bottom: 10px;
+  left: 10px;
   cursor: pointer;
 }
 
@@ -112,38 +125,20 @@ button:hover {
   opacity: 0.6;
 }
 
-#try {
-  font-size: 0.8em;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-  background-color: #FF9000;
-  padding: 5px 25px 5px 25px;
-  border-radius: 15px;
+#version {
+  font-size: 0.7em;
+  color: #A6A8AA;
   position: absolute;
   bottom: 10px;
   right: 10px;
   cursor: pointer;
 }
 
-#try:hover {
-  opacity: 0.8;
+#version:hover {
+  color: white;
+  text-decoration: underline;
 }
 
 footer {
-  margin-top: 50px;
+  margin-top: 30px;
 }
-
-/* Hidden (Coming soon) */
-
-/*#pasteButton {
-  position: absolute;
-  top: 5px;
-  right: 0px;
-  z-index: 999999;
-  padding: 2px 5px 2px 5px;
-  font-size: 0.8em;
-  background-color: lightgrey;
-  color: grey;
-  border: none;
-}*/
