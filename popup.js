@@ -10,6 +10,9 @@ function manualEncrypt() {
   const inputText = document.getElementById('inputText').value;
   const encryptedText = CryptoJS.AES.encrypt(inputText, key).toString();
   document.getElementById('outputText').textContent = 'redakt.org-' +  encryptedText + '&&&';
+  document.getElementById("outputText").style.border = "solid 1px #292A2D";
+  document.getElementById("outputText").style.borderRadius = "5px";
+  document.getElementById("outputText").style.padding = "5px";
   document.getElementById("copied").style.display = "none";
 }
 
@@ -23,6 +26,9 @@ function manualDecrypt() {
   const inputText = document.getElementById('inputText').value.replace('redakt.org-','').replace('redakt-','').replace('&&&','').replace('r3d4kt-','').replace('r8%h7t-','');
   const decryptedText = CryptoJS.AES.decrypt(inputText, key).toString(CryptoJS.enc.Utf8);
   document.getElementById('outputText').textContent = decryptedText;
+  document.getElementById("outputText").style.border = "solid 1px #292A2D";
+  document.getElementById("outputText").style.padding = "5px";
+  document.getElementById("outputText").style.borderRadius = "5px";
   document.getElementById("copied").style.display = "none";
 }
 
