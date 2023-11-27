@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
 function manualEncrypt() {
   const inputText = document.getElementById('inputText').value;
   const encryptedText = CryptoJS.AES.encrypt(inputText, key).toString();
-  document.getElementById('outputText').textContent = 'redakt.org-' +  encryptedText + '&&&';
-  document.getElementById("outputText").style.border = "solid 1px #292A2D";
-  document.getElementById("outputText").style.borderRadius = "5px";
+  document.getElementById('outputText').textContent = '<keylang>' +  encryptedText + '</keylang>';
+  document.getElementById("outputText").style.border = "solid 1px #7F9AFA";
+  document.getElementById("outputText").style.borderRadius = "2px";
   document.getElementById("outputText").style.padding = "5px";
   document.getElementById("copied").style.display = "none";
 }
@@ -23,12 +23,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function manualDecrypt() {
-  const inputText = document.getElementById('inputText').value.replace('redakt.org-','').replace('redakt-','').replace('&&&','').replace('r3d4kt-','').replace('r8%h7t-','');
+  const inputText = document.getElementById('inputText').value.replace('redakt.org-','').replace('redakt-','').replace('&&&','').replace('r3d4kt-','').replace('r8%h7t-','').replace('<keylang>','').replace('</keylang>','').replace('keylang:','').replace(':keylang','');
   const decryptedText = CryptoJS.AES.decrypt(inputText, key).toString(CryptoJS.enc.Utf8);
   document.getElementById('outputText').textContent = decryptedText;
-  document.getElementById("outputText").style.border = "solid 1px #292A2D";
+  document.getElementById("outputText").style.border = "solid 1px #7F9AFA";
   document.getElementById("outputText").style.padding = "5px";
-  document.getElementById("outputText").style.borderRadius = "5px";
+  document.getElementById("outputText").style.borderRadius = "2px";
   document.getElementById("copied").style.display = "none";
 }
 
@@ -68,18 +68,18 @@ function forceSelect() {
     var text = element.textContent.trim();
 
     // Check if the text matches the desired pattern
-    if (text.startsWith("redakt-") || text.startsWith("redakt.org-") || text.startsWith("r3d4kt-") || text.startsWith("r8%h7t-")) {
-      if (text.endsWith("&&&")) {
+    if (text.startsWith("redakt-") || text.startsWith("redakt.org-") || text.startsWith("r3d4kt-") || text.startsWith("r8%h7t-") || text.startsWith("<keylang>") || text.startsWith("keylang:")) {
+      if (text.endsWith("&&&") || text.endsWith("</keylang>") || text.endsWith(":keylang")) {
         // Send the text to the decrypt function
         var decryptedText = forceDecrypt(text);
 
         // Change the HTML of the element
         element.innerHTML = decryptedText;
-        console.log("[Forced] Message decrypted with Redakt");
+        console.log("[Keylang] Message decrypted (forced)");
 
         // Change styles of text
         element.style.color = "white";
-        element.style.backgroundColor = "black";
+        element.style.backgroundColor = "#0E1F5D"; 
         element.style.fontFamily = "sans-serif";
         element.style.padding = "5px";
       }
@@ -88,11 +88,11 @@ function forceSelect() {
 
   function forceDecrypt(text) {
     // Clean text
-    const messageContent = text.replace('redakt.org-','').replace('redakt-','').replace('&&&','').replace('r3d4kt-','').replace('r8%h7t-','');
+    const messageContent = text.replace('redakt.org-','').replace('redakt-','').replace('&&&','').replace('r3d4kt-','').replace('r8%h7t-','').replace('<keylang>','').replace('</keylang>','').replace('keylang:','').replace(':keylang','');
     
     // Decrypt text
     const decrypted = CryptoJS.AES.decrypt(messageContent, key);
-    const decryptedText = "[redakt] " + decrypted.toString(CryptoJS.enc.Utf8);
+    const decryptedText = "[keylang] " + decrypted.toString(CryptoJS.enc.Utf8) + " [/keylang]";
     return decryptedText;
   };
 }

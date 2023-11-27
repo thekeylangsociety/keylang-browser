@@ -13,18 +13,18 @@ function select() {
     var text = element.textContent.trim();
 
     // Check if the text matches the desired pattern
-    if (text.startsWith("redakt-") || text.startsWith("redakt.org-") || text.startsWith("r3d4kt-") || text.startsWith("r8%h7t-")) {
-      if (text.endsWith("&&&")) {
+    if (text.startsWith("redakt-") || text.startsWith("redakt.org-") || text.startsWith("r3d4kt-") || text.startsWith("r8%h7t-") || text.startsWith("<keylang>") || text.startsWith("keylang:")) {
+      if (text.endsWith("&&&") || text.endsWith("</keylang>") || text.endsWith(":keylang")) {
         // Send the text to the decrypt function
         var decryptedText = decrypt(text);
 
         // Change the HTML of the element
         element.innerHTML = decryptedText;
-        console.log("Message decrypted with Redakt");
+        console.log("[Keylang] Message decrypted");
 
         // Change styles of text
         element.style.color = "white";
-        element.style.backgroundColor = "black";
+        element.style.backgroundColor = "#0E1F5D";
         element.style.fontFamily = "sans-serif";
         element.style.padding = "5px";
       }
@@ -35,11 +35,11 @@ function select() {
 function decrypt(text) {
 
   // Clean text
-  const messageContent = text.replace('redakt.org-','').replace('redakt-','').replace('&&&','').replace('r3d4kt-','').replace('r8%h7t-','');
+  const messageContent = text.replace('redakt.org-','').replace('redakt-','').replace('&&&','').replace('r3d4kt-','').replace('r8%h7t-','').replace('<keylang>','').replace('</keylang>','').replace('keylang:','').replace(':keylang','');
   
   // Decrypt text
   const decrypted = CryptoJS.AES.decrypt(messageContent, key);
-  const decryptedText = "[redakt] " + decrypted.toString(CryptoJS.enc.Utf8);
+  const decryptedText = "[keylang] " + decrypted.toString(CryptoJS.enc.Utf8) + " [/keylang]";
   return decryptedText;
 };
 

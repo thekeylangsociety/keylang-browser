@@ -1,21 +1,21 @@
 {
   "manifest_version": 3,
-  "name": "Redakt",
-  "version": "1.2.5",
+  "name": "Keylang",
+  "version": "1.2.6",
   "permissions": ["activeTab", "scripting"],
-  "description": "Encrypt and protect your content against bots, scrappers, algorithms and AI.",
+  "description": "Transforms your text into code that can only be understood by users with the key.",
   "action": {
     "default_icon": {
-      "16": "assets/redakt16.png",
-      "48": "assets/redakt48.png",
-      "128": "assets/redakt128.png"
+      "16": "assets/keylang16.png",
+      "48": "assets/keylang48.png",
+      "128": "assets/keylang128.png"
     },
     "default_popup": "popup.html"
   },
   "icons": {
-    "16": "assets/redakt16.png",
-    "48": "assets/redakt48.png",
-    "128": "assets/redakt128.png"
+    "16": "assets/keylang16.png",
+    "48": "assets/keylang48.png",
+    "128": "assets/keylang128.png"
   },
   "content_scripts": [
     {
