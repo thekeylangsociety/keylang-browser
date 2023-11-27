@@ -1,5 +1,5 @@
-# How to use Redakt browser extension?
+# How to use the Keylang browser extension?
 
-We the web page has finished loading, Redakt's browser extension automatically decrypt all texts previously encrypted with Redakt. You can force the web page decryption by pressing the 🔄 (Force decrypt) button.
+When the web page has finished loading, Keylang's browser extension automatically decrypt all texts previously encrypted in Keylang. You can force the web page decryption by pressing the 🔄 (Force decrypt) button.
 
-[Install Chrome Extension](https://chrome.google.com/webstore/detail/redakt/lcdknfdkanhghggokgjnhmgiegngjdja)
+[Install Chrome Extension](https://keylang.org/browser/)

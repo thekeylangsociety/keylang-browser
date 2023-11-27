@@ -1,11 +1,17 @@
 @font-face {
-    font-family: "Agrandir Title";
-    src: url("./assets/fonts/Agrandir-Title.otf");
+    font-family: "Inter-SemiBold";
+    src: url("./assets/fonts/Inter-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "Inter-Regular";
+    src: url("./assets/fonts/Inter-Regular.ttf");
 }
 
 body {
 	margin: 0px;
-	background-color: black;
+	background-color: #0E1F5D;
+  font-family: "Inter-Regular", sans-serif;
 }
 
 .popup-container {
@@ -21,28 +27,29 @@ header {
 }
 
 h3 > a {
-  font-family: "Agrandir Title";
+  font-family: "Inter-SemiBold", sans-serif;
 	color: white;
-	font-size: 1.2em;
-  margin-right: 5px;
+	font-size: 1.6em;
   text-decoration: none;
-  letter-spacing: 1.5px;
+  letter-spacing: -0.5px;
   position: absolute;
-  top: 15px;
-  left: 15px;
+  top: 10px;
+  left: 10px;
   cursor: pointer;
+  transition-duration: 0.3s;
 }
 
 h3 > a:hover {
-  text-decoration: underline;
+  opacity: 0.6;
+  transition-duration: 0.3s;
 }
 
 #try {
   font-size: 0.8em;
   font-weight: bold;
-  color: #FF9000;
+  color: #7F9AFA;
   text-decoration: none;
-  border: solid 1px #FF9000;
+  border: solid 1px #7F9AFA;
   background-color: transparent;
   padding: 5px 25px 5px 25px;
   border-radius: 5px;
@@ -50,13 +57,13 @@ h3 > a:hover {
   bottom: 10px;
   right: 10px;
   cursor: pointer;
-  transition-duration: 0.6s;
+  transition-duration: 0.3s;
 }
 
 #try:hover {
-  background-color: #FF9000;
+  background-color: #7F9AFA;
   color: black;
-  transition-duration: 0.6s;
+  transition-duration: 0.3s;
 }
 
 .textarea-wrapper {
@@ -64,6 +71,7 @@ h3 > a:hover {
 }
 
 textarea {
+  font-family: "Inter-Regular", sans-serif;
   max-width: 100%;
   min-width: 100%;
   width: 100%;
@@ -72,31 +80,32 @@ textarea {
   max-height: 100px;
   margin-bottom: 10px;
   padding: 5px;
-  font-family: sans-serif;
   font-size: 1em;
   overflow-y: scroll;
 }
 
 button {
+  font-family: "Inter-SemiBold", sans-serif;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
-  color: white;
-  background-color: #191919;
-  font-family: sans-serif;
+  color: #0E1F5D;
+  background-color: #7F9AFA;
   font-size: 1em;
   border: solid 1.5px #292A2D;
   margin-right: 5px;
+  transition-duration: 0.3s;
 }
 
 button:hover {
   opacity:0.8;
+  transition-duration: 0.3s;
 }
 
 #outputText {
+  font-family: "Inter-Regular", sans-serif;
   word-break: break-all;
   white-space: normal;
-  font-family: sans-serif;
   font-size: 1em;
   color: white;
   max-height: 100px;
@@ -106,6 +115,7 @@ button:hover {
 #outputText:hover {
   opacity:0.4;
   cursor: pointer;
+  transition-duration: 0.3s;
 }
 
 .copied {
@@ -123,24 +133,27 @@ button:hover {
   top: 10px;
   right: 10px;
   cursor: pointer;
+  transition-duration: 0.3s;
 }
 
 #syncIcon:hover {
   opacity: 0.6;
+  transition-duration: 0.3s;
 }
 
 #version {
   font-size: 0.7em;
-  color: #A6A8AA;
+  color: #7F9AFA;
   position: absolute;
   bottom: 10px;
   left: 10px;
   cursor: pointer;
+  transition-duration: 0.3s;
 }
 
 #version:hover {
   color: white;
-  text-decoration: underline;
+  transition-duration: 0.3s;
 }
 
 footer {
