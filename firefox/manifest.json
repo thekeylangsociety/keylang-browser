@@ -1,21 +1,21 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "Keylang",
   "version": "1.3.0",
   "permissions": ["activeTab", "scripting"],
   "description": "Transforms your text into code that can only be understood by users with the key.",
-  "action": {
+  "icons": {
+    "16": "assets/keylang16.png",
+    "48": "assets/keylang48.png",
+    "128": "assets/keylang128.png"
+  },
+  "browser_action": {
     "default_icon": {
       "16": "assets/keylang16.png",
       "48": "assets/keylang48.png",
       "128": "assets/keylang128.png"
     },
     "default_popup": "popup.html"
-  },
-  "icons": {
-    "16": "assets/keylang16.png",
-    "48": "assets/keylang48.png",
-    "128": "assets/keylang128.png"
   },
   "content_scripts": [
     {
