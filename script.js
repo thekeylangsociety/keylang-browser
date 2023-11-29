@@ -1,5 +1,3 @@
-fetch('crypto.js');
-
 const key = "i<3redakt-06644fe7-6503-484b-9ae0-02db2dda7466";
 
 function select() {
